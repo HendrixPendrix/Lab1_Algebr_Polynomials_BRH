@@ -4,7 +4,7 @@
 #include<iostream>
 #include "list.h"
 #include <string>
-#include <math.h>
+//#include <math.h>
 
 using namespace std;
 

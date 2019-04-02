@@ -51,7 +51,7 @@ template <class ValType> TList<ValType>::TList(const ValType &_key)
 	pFirst = new Node<ValType>;
 	pFirst->key = _key;
 	size = 1;
-	pLast = pFirst;
+	//pLast = pFirst;
 }
 
 template <class ValType> TList<ValType>::~TList()
@@ -135,7 +135,7 @@ template <class ValType> TList<ValType> &TList<ValType>::operator=(TList &_TList
 			tmp = tmp->pNext;
 			tmp1 = tmp1->pNext;
 		}
-		//tmp->key = tmp1->key;
+		/*tmp->key = tmp1->key;*/
 		while (tmp1->pNext != nullptr)
 		{
 			tmp->pNext = new Node<ValType>;

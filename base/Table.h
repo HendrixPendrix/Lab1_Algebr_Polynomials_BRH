@@ -93,18 +93,18 @@ template <class T> class TableSort
 	TRecord<T>data[MaxSize];
 	int count = 0;
 public:
-	void Sort(TRecord <T> *_data, int _count)
+	void Sort()
 	{
 		TRecord<T> tmp;
 		int ind;
-		for (int i = 1; i < _count; i++)
+		for (int i = 1; i < count; i++)
 		{
-			tmp = _data[i];
+			tmp = data[i];
 			ind = i - 1;
-			while (ind >= 0 && _data[ind].key > tmp.key)
+			while (ind >= 0 && data[ind].key > tmp.key)
 			{
-				_data[ind + 1] = _data[ind];
-				_data[ind] = tmp;
+				data[ind + 1] = data[ind];
+				data[ind] = tmp;
 				ind--;
 			}
 		}
@@ -127,7 +127,7 @@ public:
 			data[count].data = _data;
 			count++;
 		}
-		Sort(data, count);
+		Sort();
 	}
 	void Delete(int _key)
 	{
@@ -144,7 +144,7 @@ public:
 				}
 			}
 			count--;
-			Sort(data, count);
+			Sort();
 		}
 	}
 	T Search(int _key)

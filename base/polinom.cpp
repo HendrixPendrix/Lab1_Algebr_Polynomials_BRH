@@ -88,7 +88,6 @@ TPolinom TPolinom::operator-(TPolinom &_Polinom)
 
 TPolinom TPolinom::operator*(TPolinom &_Polinom)
 {
-
 	TPolinom emp;
 	TMonom t;
 	for (int i = 0; i < monoms.GetSize(); i++)
