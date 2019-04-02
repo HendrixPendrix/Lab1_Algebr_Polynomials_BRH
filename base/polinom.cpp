@@ -35,7 +35,7 @@ TPolinom TPolinom::operator+(TPolinom &_Polinom)
 	int i = 0, j = 0;
 	while ((i < monoms.GetSize()) && (j < _Polinom.monoms.GetSize()))
 	{
-		if (monoms[i] > _Polinom.monoms[j])
+		if (monoms[i] > _Polinom.monoms[j] )
 		{
 			tmp.monoms.Push_back(monoms[i]);
 			i++;
@@ -83,6 +83,7 @@ TPolinom TPolinom::operator-(TPolinom &_Polinom)
 	for (int i = 0; i < tmp.monoms.GetSize(); i++)
 		tmp.monoms[i].k = -1 * tmp.monoms[i].k;
 	tmp = *this + tmp;
+	/*cout << "sss";*/
 	return tmp;
 }
 
@@ -122,7 +123,7 @@ TPolinom TPolinom::operator/(TPolinom &_Polinom)
 
 TPolinom TPolinom::Integration(char var)
 {
-	TPolinom _Polinom=*this;
+	TPolinom _Polinom = *this;
 	for (int i = 0; i < _Polinom.monoms.GetSize(); i++)
 	{
 		switch (var)
@@ -147,7 +148,7 @@ TPolinom TPolinom::Integration(char var)
 
 TPolinom TPolinom::Differentiation(char var)
 {
-	TPolinom _Polinom=*this;
+	TPolinom _Polinom = *this;
 	for (int i = 0; i < _Polinom.monoms.GetSize(); i++)
 	{
 		switch (var)
@@ -156,7 +157,7 @@ TPolinom TPolinom::Differentiation(char var)
 		{
 			_Polinom.monoms[i].k = _Polinom.monoms[i].k * _Polinom.monoms[i].power[0];
 			_Polinom.monoms[i].power[0]--;
-			
+
 			break;
 		}
 		case 'y':

@@ -194,20 +194,28 @@ TEST(TPolinom, can_set_polinom)
 //}
 TEST(TPolinom, can_equate)
 {
-	TPolinom p("x2y1z4+x1y3z1");
-	TPolinom k("x1y1z2+x4y2z1");
+	TPolinom p("1x2y1z4+1x1y3z1");
+	TPolinom k("1x1y1z2+1x4y2z1");
 	ASSERT_NO_THROW(k = p);
 }
 //TEST(TPolinom, can_addition)
 //{
-//	TPolinom p("x2y1z4+x1y3z1");
+//	TPolinom p("1x3y5z1+6x4y9z11");
 //	TPolinom k(p);
 //	ASSERT_NO_THROW(p + k);
 //}
+TEST(TPolinom, can_right_addition)
+{
+	TPolinom p("1x2y1z4+1x1y3z1");
+	TPolinom k("1x1y1z2+1x4y2z1");
+	TPolinom pk;
+	pk = p + k;
+	EXPECT_EQ("1x4y2z1+1x2y1z4+1x1y3z1+1x1y1z2", pk.GetStrPolinom());
+}
 //TEST(TPolinom, can_subtract)
 //{
-//	TPolinom p("x2*y1*z4+x1*y3*z1");
-//	TPolinom k("x2*y1*z4");
+//	TPolinom p("1x2y1z4+1x1y3z1");
+//	TPolinom k("1x2y1z4");
 //	ASSERT_NO_THROW(p - k);
 //}
 //TEST(TPolinom, can_multiply)
@@ -216,18 +224,18 @@ TEST(TPolinom, can_equate)
 //	TPolinom k("1x2y1z4");
 //	ASSERT_NO_THROW(p * k);
 //}
-//TEST(TPolinom, can_integration)
-//{
-//	TPolinom p("x2*y1*z4+x1*y3*z1");
-//	ASSERT_NO_THROW(p.Integration('x'));
-//}
-//TEST(TPolinom, can_diffentiation)
-//{
-//	TPolinom p("x2*y1*z4+x1*y3*z1");
-//	ASSERT_NO_THROW(p.Differentiation('x'));
-//}
-//TEST(TPolinom, can_calculate)
-//{
-//	TPolinom p("x2*y1*z4+x1*y3*z1");
-//	ASSERT_NO_THROW(p.Calculate(1, 2, 3));
-//}
+TEST(TPolinom, can_integration)
+{
+	TPolinom p("x2y1z4+x1y3z1");
+	ASSERT_NO_THROW(p.Integration('x'));
+}
+TEST(TPolinom, can_diffentiation)
+{
+	TPolinom p("x2y1z4+x1y3z1");
+	ASSERT_NO_THROW(p.Differentiation('x'));
+}
+TEST(TPolinom, can_calculate)
+{
+	TPolinom p("x2y1z4+x1y3z1");
+	ASSERT_NO_THROW(p.Calculate(1, 2, 3));
+}
