@@ -193,7 +193,7 @@ public:
 	{
 		int count = 0;
 		Node<TRecord<T>> *first = data.begin();
-		while (first!= nullptr)
+		while (first != nullptr)
 		{
 			if (first->key.key == _key)
 			{

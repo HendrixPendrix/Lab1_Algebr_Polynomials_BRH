@@ -16,7 +16,7 @@ struct TMonom
 	{
 		for (int i = 0; i < 3; i++)
 			power[i] = 0;
-		k = 1;
+		k = 0;
 	}
 	bool operator>(TMonom &_mon)
 	{

@@ -210,14 +210,16 @@ TEST(TPolinom, can_right_addition)
 	TPolinom k("1x1y1z2+1x4y2z1");
 	TPolinom pk;
 	pk = p + k;
-	EXPECT_EQ("1x4y2z1+1x2y1z4+1x1y3z1+1x1y1z2", pk.GetStrPolinom());
+	EXPECT_EQ("1.000000x2y1z4+1.000000x1y3z1+1.000000x1y1z2+1.000000x4y2z1", pk.GetStrPolinom());
 }
-//TEST(TPolinom, can_subtract)
-//{
-//	TPolinom p("1x2y1z4+1x1y3z1");
-//	TPolinom k("1x2y1z4");
-//	ASSERT_NO_THROW(p - k);
-//}
+TEST(TPolinom, can_subtract)
+{
+	TPolinom p("1x2y1z4+1x1y3z1");
+	TPolinom k("1x2y1z4");
+	TPolinom pk;
+	pk=p - k;
+	EXPECT_EQ("1.000000x1y3z1",pk.GetStrPolinom());
+}
 //TEST(TPolinom, can_multiply)
 //{
 //	TPolinom p("1x2y1z4+1x1y3z1");
