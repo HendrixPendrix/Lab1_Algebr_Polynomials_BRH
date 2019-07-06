@@ -1,5 +1,6 @@
-#include"Table.h"
-#include"polinom.h"
+#include "Table.h"
+#include "polinom.h"
+#include <Windows.h>
 
 //count - количество выводимых элементов таблицы 
 
@@ -11,6 +12,7 @@ void ShowTableHashL(int count = 10);
 void ChangeTable();
 void CreateMenu();
 void Clear();
+void gotoxy(int x, int y);
 
 
 

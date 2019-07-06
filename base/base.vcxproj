@@ -14,7 +14,7 @@
     <ProjectGuid>{4854D7B0-72B7-4276-BE33-BFADBC979165}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>base</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -81,14 +81,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="polinom.cpp" />
-    <ClCompile Include="window.cpp" />
+    <ClInclude Include="list.h" />
+    <ClInclude Include="polinom.h" />
+    <ClInclude Include="postfix.h" />
+    <ClInclude Include="stack.h" />
+    <ClInclude Include="Table.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="polinom.h" />
-    <ClInclude Include="list.h" />
-    <ClInclude Include="Table.h" />
-    <ClInclude Include="window.h" />
+    <ClCompile Include="Lab1.cpp" />
+    <ClCompile Include="polinom.cpp" />
+    <ClCompile Include="postfix.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
